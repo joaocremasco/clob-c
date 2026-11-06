@@ -24,7 +24,6 @@ int main(int argc, char *argv[]) {
         return EXIT_FAILURE;
     }
 
-    ORDER_BOOK *book = orderbook_init();
     char type;
     int id, qty;
     double price;

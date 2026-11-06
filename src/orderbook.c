@@ -4,6 +4,7 @@
 
 #include "item.h"
 #include "queue.h"
+#include "orderbook.h"
 
 struct orderbook{
   QUEUE *bids;
@@ -31,8 +32,8 @@ void orderbook_delete(ORDER_BOOK **book_ptr){
   if(book_ptr == NULL || *book_ptr == NULL)
     return;
 
-  queue_delete(&((*book->ptr)->asks));
-  queue_delete(&((*book->ptr)->bids));
+  queue_delete(&((*book_ptr)->asks));
+  queue_delete(&((*book_ptr)->bids));
 
   free(*book_ptr);
   *book_ptr = NULL;
